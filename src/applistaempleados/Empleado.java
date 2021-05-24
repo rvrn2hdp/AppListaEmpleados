@@ -47,9 +47,21 @@ public class Empleado extends Persona {
         this.fechaContratacion = fechaContratacion;
     }
 
+    public String toStringTabla() {
+        return     "|"+this.nroLegajo
+                +"     "+"|"+getSurname()
+                +"   "+"|"+getName()
+                +"   "+"|"+this.telefono
+                +"   "+"|"+(getGender() == 'M' ? "Hombre" : "Mujer")
+                +" "+"|"+getFechaNacimiento()
+                +" "+"|"+this.fechaContratacion
+                +"  "+"|"+getFechaNacimiento().calcularAniosTranscurridos()
+                +"  "+"|"+getFechaContratacion().calcularAniosTranscurridos()+"\t|";
+    }
+
     @Override
     public String toString() {
-        return "\nNro. de Legajo: " + nroLegajo
+        return "\nNro. de Legajo: " + this.nroLegajo
                 + "\nEmpleado: " + getSurname() + ", " + getName()
                 + "\nTelefono: " + this.telefono
                 + "\nSexo: " + (getGender() == 'M' ? "Hombre" : "Mujer")

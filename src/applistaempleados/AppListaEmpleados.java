@@ -31,6 +31,18 @@ public class AppListaEmpleados {
         }
     }
 
+    static void mostrarDatosTablas() {
+        System.out.println("+------+------------+------------+------------+------+------------+----------------+----+----------+");
+        System.out.println("|Nro de|  Apellido  |   Nombre   |  Telefono  |Genero|  Fecha de  |Inicio Actividad|Edad|Antiguedad|");
+        System.out.println("|Legajo|            |            |            |      | Nacimiento |    Laboral     |    | Laboral  |");
+        System.out.println("+------+------------+------------+------------+------+------------+----------------+----+----------+");
+        List<Empleado> lista = service.buscarTodo();
+
+        lista.forEach((Empleado _item) -> {
+            System.out.println(_item.toStringTabla());
+        });
+    }
+
     static void mostrarMenu() {
 
         int opcion = 0;
@@ -61,6 +73,18 @@ public class AppListaEmpleados {
                     System.out.println("------ Listado de Empleados -------");
                     System.out.println("-----------------------------------");
                     mostrarDatosDescendente();
+                    break;
+                case 3:
+                    System.out.println("-----------------------------------");
+                    System.out.println("------ Listado de Empleados -------");
+                    System.out.println("-----------------------------------");
+                    mostrarDatosAscendente();
+                    break;
+                case 4:
+                    System.out.println("-----------------------------------");
+                    System.out.println("------ Listado de Empleados -------");
+                    System.out.println("-----------------------------------");
+                    mostrarDatosTablas();
                     break;
                 case 5:
                     nuevoEmpleado();
